@@ -22,25 +22,42 @@ static const uint qt_meta_data_chat[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
+ // slots: signature, parameters, type, tag, flags
+       6,    5,    5,    5, 0x08,
+      30,    5,    5,    5, 0x08,
+      57,    5,    5,    5, 0x08,
+      85,    5,    5,    5, 0x08,
+
        0        // eod
 };
 
 static const char qt_meta_stringdata_chat[] = {
-    "chat\0"
+    "chat\0\0on_exitButton_clicked()\0"
+    "on_maxSizeButton_clicked()\0"
+    "on_sendFileButton_clicked()\0"
+    "on_sendButton_clicked()\0"
 };
 
 void chat::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    Q_UNUSED(_o);
-    Q_UNUSED(_id);
-    Q_UNUSED(_c);
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        Q_ASSERT(staticMetaObject.cast(_o));
+        chat *_t = static_cast<chat *>(_o);
+        switch (_id) {
+        case 0: _t->on_exitButton_clicked(); break;
+        case 1: _t->on_maxSizeButton_clicked(); break;
+        case 2: _t->on_sendFileButton_clicked(); break;
+        case 3: _t->on_sendButton_clicked(); break;
+        default: ;
+        }
+    }
     Q_UNUSED(_a);
 }
 
@@ -75,6 +92,11 @@ int chat::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     _id = QWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 4)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 4;
+    }
     return _id;
 }
 QT_END_MOC_NAMESPACE

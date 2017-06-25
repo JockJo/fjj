@@ -4,7 +4,7 @@
 #include <QApplication>
 #include "chat.h"
 #include "login.h"
-
+#include "tcp.h"
 
 #endif // MAIN
 

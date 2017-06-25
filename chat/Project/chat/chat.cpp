@@ -97,7 +97,11 @@ chat::chat(QWidget *parent) :
     ui->userPhotolabel->setPixmap(QPixmap::fromImage(result));
 }
 
-
+void chat::fullScreen()
+{
+    ui->toolListWidget->showMaximized();
+    this->showFullScreen();
+}
 void chat::mousePressEvent(QMouseEvent* event)
 {
     if(event->button() == Qt::LeftButton)
@@ -124,4 +128,36 @@ void chat::mouseReleaseEvent(QMouseEvent* event)
 chat::~chat()
 {
     delete ui;
+}
+
+void chat::on_exitButton_clicked()
+{
+    delete ui;
+    this->close();
+}
+
+void chat::on_maxSizeButton_clicked()
+{
+ //   this->fullScreen();
+}
+
+void chat::on_sendFileButton_clicked()
+{
+    tcp* tc = new tcp(this);
+    if(tc->openFile())
+    {
+        ui->sendButton->setEnabled(true);
+    }
+
+}
+
+void chat::setProgressBar(qint64 max, qint64 value)
+{
+    ui->sendFileProgressBar->setMaximum(max);
+    ui->sendFileProgressBar->setValue(value);
+}
+
+void chat::on_sendButton_clicked()
+{
+    /**发送*/
 }

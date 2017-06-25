@@ -18,6 +18,7 @@
 #include <QtGui/QLineEdit>
 #include <QtGui/QListView>
 #include <QtGui/QListWidget>
+#include <QtGui/QProgressBar>
 #include <QtGui/QPushButton>
 #include <QtGui/QTextEdit>
 #include <QtGui/QWidget>
@@ -40,6 +41,7 @@ public:
     QPushButton *sendFileButton;
     QPushButton *emojiButton;
     QPushButton *phoneButton;
+    QProgressBar *sendFileProgressBar;
     QPushButton *addfriendButton;
     QPushButton *tolkingButton;
     QPushButton *friendButton;
@@ -107,6 +109,10 @@ public:
         phoneButton = new QPushButton(bottomWidget);
         phoneButton->setObjectName(QString::fromUtf8("phoneButton"));
         phoneButton->setGeometry(QRect(90, 20, 20, 20));
+        sendFileProgressBar = new QProgressBar(bottomWidget);
+        sendFileProgressBar->setObjectName(QString::fromUtf8("sendFileProgressBar"));
+        sendFileProgressBar->setGeometry(QRect(250, 20, 118, 23));
+        sendFileProgressBar->setValue(0);
         addfriendButton = new QPushButton(chat);
         addfriendButton->setObjectName(QString::fromUtf8("addfriendButton"));
         addfriendButton->setGeometry(QRect(340, 30, 30, 30));

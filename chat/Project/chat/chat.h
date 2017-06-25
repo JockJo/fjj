@@ -8,6 +8,7 @@
 #include <QHBoxLayout>
 #include <QMouseEvent>
 #include <QKeyEvent>
+#include <main.h>
 
 namespace Ui {
 class chat;
@@ -26,10 +27,19 @@ private:
     bool mousePress;
     QPoint mousePos;
 
+    void setProgressBar(qint64 max, qint64 value);
+
 protected:
     void mousePressEvent(QMouseEvent*);
     void mouseMoveEvent(QMouseEvent*);
     void mouseReleaseEvent(QMouseEvent*);
+    void fullScreen();
+
+private slots:
+    void on_exitButton_clicked();
+    void on_maxSizeButton_clicked();
+    void on_sendFileButton_clicked();
+    void on_sendButton_clicked();
 };
 
 #endif // CHAT_H
