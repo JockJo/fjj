@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/myImages">
+        <file>1.jpg</file>
+        <file>label/box.png</file>
+        <file>label/folder.png</file>
+        <file>label/Smile.png</file>
+        <file>label/box2.png</file>
+        <file>label/folder2.png</file>
+        <file>label/Smile2.png</file>
+        <file>label/phone.png</file>
+        <file>label/phone2.png</file>
+        <file>label/box3.png</file>
+        <file>label/comments.png</file>
+        <file>label/comments2.png</file>
+        <file>label/comments3.png</file>
+        <file>label/friends.png</file>
+        <file>label/friends2.png</file>
+        <file>label/friends3.png</file>
+        <file>label/list.png</file>
+        <file>label/list2.png</file>
+    </qresource>
+</RCC>
