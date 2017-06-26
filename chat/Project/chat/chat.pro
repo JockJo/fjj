@@ -15,13 +15,15 @@ TEMPLATE = app
 SOURCES += main.cpp\
     login.cpp \
     chat.cpp \
-    tcp.cpp
+    tcp.cpp \
+    udp.cpp
 
 HEADERS  += \
     login.h \
     main.h \
     chat.h \
-    tcp.h
+    tcp.h \
+    udp.h
 
 FORMS    += chat.ui \
     login.ui

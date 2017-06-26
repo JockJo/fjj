@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\login.o
+./release\chat.o
+./release\tcp.o
+./release\udp.o
+./release\moc_login.o
+./release\moc_chat.o
+./release\moc_tcp.o
+./release\moc_udp.o
+./release\qrc_myimages.o
+);

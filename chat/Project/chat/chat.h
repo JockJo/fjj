@@ -9,6 +9,11 @@
 #include <QMouseEvent>
 #include <QKeyEvent>
 #include <main.h>
+#include <QDialog>
+#include <QList>
+
+class tcp;
+class udp;
 
 namespace Ui {
 class chat;
@@ -26,6 +31,8 @@ private:
     Ui::chat *ui;
     bool mousePress;
     QPoint mousePos;
+    tcp* tc;
+    udp* ud;
 
     void setProgressBar(qint64 max, qint64 value);
 
@@ -40,6 +47,8 @@ private slots:
     void on_maxSizeButton_clicked();
     void on_sendFileButton_clicked();
     void on_sendButton_clicked();
+    void on_addfriendButton_clicked();
+    void on_collectionButton_clicked();
 };
 
 #endif // CHAT_H

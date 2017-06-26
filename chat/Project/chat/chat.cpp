@@ -45,7 +45,8 @@ chat::chat(QWidget *parent) :
     //设置发送按钮
     ui->sendButton->setCursor(Qt::PointingHandCursor);
     ui->sendButton->setStyleSheet("QPushButton{background-color:rgb(245,245,245);color:rgb(96,96,96);font-size:16px;font-weight:bold;border-color:rgb(229,229,229);border-style:inset;}"
-                                  "QPushButton:hover{background-color:rgb(61,206,61);color:rgb(255,255,255);font-size:16px;font-weight:bold;border-style:inset;}");
+                                  "QPushButton:hover{background-color:rgb(18,150,17);color:rgb(255,255,255);font-size:16px;font-weight:bold;border-style:inset;}"
+                                  "QPushButton:pressed{background-color:rgb(26,173,25);color:rgb(255,255,255);font-size:16px;font-weight:bold;border-style:inset;}");
     //设置显示框
     ui->listView->setStyleSheet("border:none");
 
@@ -95,13 +96,19 @@ chat::chat(QWidget *parent) :
     result = image.scaled(ui->userPhotolabel->width(),ui->userPhotolabel->height(),Qt::IgnoreAspectRatio,
                           Qt::SmoothTransformation);
     ui->userPhotolabel->setPixmap(QPixmap::fromImage(result));
+    tc = new tcp(this);
+    ud = new udp(this);
+    tc->tcpListen();
 }
 
+//全屏显示
 void chat::fullScreen()
 {
     ui->toolListWidget->showMaximized();
     this->showFullScreen();
 }
+
+//移动窗口
 void chat::mousePressEvent(QMouseEvent* event)
 {
     if(event->button() == Qt::LeftButton)
@@ -130,25 +137,34 @@ chat::~chat()
     delete ui;
 }
 
+//关闭窗口
 void chat::on_exitButton_clicked()
 {
     delete ui;
     this->close();
 }
 
+//显示全屏
 void chat::on_maxSizeButton_clicked()
 {
  //   this->fullScreen();
 }
 
+//发送文件
 void chat::on_sendFileButton_clicked()
 {
-    tcp* tc = new tcp(this);
-    if(tc->openFile())
+    QString filename;
+    tc->openFile();
+    if( (filename = tc->gotFilename()).isEmpty() )
     {
-        ui->sendButton->setEnabled(true);
+       QDialog* fileError = new QDialog(this);
+       fileError->setWindowTitle("ERROR");
+       fileError->show();
     }
-
+    else
+    {
+       ui->textEdit->setText(tc->gotFilename());
+    }
 }
 
 void chat::setProgressBar(qint64 max, qint64 value)
@@ -159,5 +175,18 @@ void chat::setProgressBar(qint64 max, qint64 value)
 
 void chat::on_sendButton_clicked()
 {
-    /**发送*/
+    tc->startSendFile();
+}
+
+void chat::on_addfriendButton_clicked()
+{
+    ud->send();
+}
+
+void chat::on_collectionButton_clicked()
+{
+    QByteArray ip = ud->gotDebugIp();
+    QString address;
+    address.append(ip);
+    tc->setConnection(address);
 }

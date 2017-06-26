@@ -7,6 +7,9 @@
 #include <QFile>
 #include <QDialog>
 #include <QFileDialog>
+#include <QTcpServer>
+#include <main.h>
+#include <QDebug>
 
 #define PORT 3333
 
@@ -20,28 +23,33 @@ public:
     ~tcp();
 
     qint64 gotTotal();
-       qint64 gotBytesWritten();
-       bool openFile();
+    qint64 gotBytesWritten();
+    bool openFile();
+    QString gotFilename();
+    void setConnection(const QString &address);
+    void startSendFile();
+    void tcpListen();
+    void updateServerProgress();
 
 
-   signals:
-
-   private:
+private:
        QTcpSocket* tcpApplication;
+       QTcpServer* tcpServer;
        QFile* localFile;
        qint64 totalBytes;
+       qint64 bytesReceived;
+       qint64 fileNameSize;
        qint64 bytesWritten;
        qint64 bytesToWrite;
        qint64 payloadSize;
        QString fileName;
        QByteArray outBlock;
+       QByteArray inBlock;
 
-       void setConnection(const QHostAddress &address);
-
-   private slots:
-       void startSendFile();
-       void updateClientProgress(qint64);
+private slots:
+       void updateFileProgress(qint64);
        void displayError(QAbstractSocket::SocketError);
+       void acceptConnection();
 };
 
 #endif // TCP_H

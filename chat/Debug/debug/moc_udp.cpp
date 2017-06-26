@@ -1,14 +1,14 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'tcp.h'
+** Meta object code from reading C++ file 'udp.h'
 **
 ** Created by: The Qt Meta Object Compiler version 63 (Qt 4.8.6)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../Project/chat/tcp.h"
+#include "../../Project/chat/udp.h"
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'tcp.h' doesn't include <QObject>."
+#error "The header file 'udp.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 63
 #error "This file was generated using the moc from 4.8.6. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -16,13 +16,13 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-static const uint qt_meta_data_tcp[] = {
+static const uint qt_meta_data_udp[] = {
 
  // content:
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       1,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -31,67 +31,62 @@ static const uint qt_meta_data_tcp[] = {
 
  // slots: signature, parameters, type, tag, flags
        5,    4,    4,    4, 0x08,
-      32,    4,    4,    4, 0x08,
-      75,    4,    4,    4, 0x08,
 
        0        // eod
 };
 
-static const char qt_meta_stringdata_tcp[] = {
-    "tcp\0\0updateFileProgress(qint64)\0"
-    "displayError(QAbstractSocket::SocketError)\0"
-    "acceptConnection()\0"
+static const char qt_meta_stringdata_udp[] = {
+    "udp\0\0processPendingDatagram()\0"
 };
 
-void tcp::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void udp::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
         Q_ASSERT(staticMetaObject.cast(_o));
-        tcp *_t = static_cast<tcp *>(_o);
+        udp *_t = static_cast<udp *>(_o);
         switch (_id) {
-        case 0: _t->updateFileProgress((*reinterpret_cast< qint64(*)>(_a[1]))); break;
-        case 1: _t->displayError((*reinterpret_cast< QAbstractSocket::SocketError(*)>(_a[1]))); break;
-        case 2: _t->acceptConnection(); break;
+        case 0: _t->processPendingDatagram(); break;
         default: ;
         }
     }
+    Q_UNUSED(_a);
 }
 
-const QMetaObjectExtraData tcp::staticMetaObjectExtraData = {
+const QMetaObjectExtraData udp::staticMetaObjectExtraData = {
     0,  qt_static_metacall 
 };
 
-const QMetaObject tcp::staticMetaObject = {
-    { &QDialog::staticMetaObject, qt_meta_stringdata_tcp,
-      qt_meta_data_tcp, &staticMetaObjectExtraData }
+const QMetaObject udp::staticMetaObject = {
+    { &QDialog::staticMetaObject, qt_meta_stringdata_udp,
+      qt_meta_data_udp, &staticMetaObjectExtraData }
 };
 
 #ifdef Q_NO_DATA_RELOCATION
-const QMetaObject &tcp::getStaticMetaObject() { return staticMetaObject; }
+const QMetaObject &udp::getStaticMetaObject() { return staticMetaObject; }
 #endif //Q_NO_DATA_RELOCATION
 
-const QMetaObject *tcp::metaObject() const
+const QMetaObject *udp::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
 }
 
-void *tcp::qt_metacast(const char *_clname)
+void *udp::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_tcp))
-        return static_cast<void*>(const_cast< tcp*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_udp))
+        return static_cast<void*>(const_cast< udp*>(this));
     return QDialog::qt_metacast(_clname);
 }
 
-int tcp::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int udp::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 1)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 1;
     }
     return _id;
 }
