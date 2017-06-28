@@ -22,7 +22,7 @@ static const uint qt_meta_data_tcp[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -33,6 +33,9 @@ static const uint qt_meta_data_tcp[] = {
        5,    4,    4,    4, 0x08,
       32,    4,    4,    4, 0x08,
       75,    4,    4,    4, 0x08,
+      94,    4,    4,    4, 0x08,
+     108,    4,    4,    4, 0x08,
+     131,    4,    4,    4, 0x08,
 
        0        // eod
 };
@@ -40,7 +43,8 @@ static const uint qt_meta_data_tcp[] = {
 static const char qt_meta_stringdata_tcp[] = {
     "tcp\0\0updateFileProgress(qint64)\0"
     "displayError(QAbstractSocket::SocketError)\0"
-    "acceptConnection()\0"
+    "acceptConnection()\0showSuccess()\0"
+    "updateServerProgress()\0slotTcpListen()\0"
 };
 
 void tcp::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -52,6 +56,9 @@ void tcp::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **
         case 0: _t->updateFileProgress((*reinterpret_cast< qint64(*)>(_a[1]))); break;
         case 1: _t->displayError((*reinterpret_cast< QAbstractSocket::SocketError(*)>(_a[1]))); break;
         case 2: _t->acceptConnection(); break;
+        case 3: _t->showSuccess(); break;
+        case 4: _t->updateServerProgress(); break;
+        case 5: _t->slotTcpListen(); break;
         default: ;
         }
     }
@@ -89,9 +96,9 @@ int tcp::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 6;
     }
     return _id;
 }

@@ -29,8 +29,6 @@ public:
     void setConnection(const QString &address);
     void startSendFile();
     void tcpListen();
-    void updateServerProgress();
-
 
 private:
        QTcpSocket* tcpApplication;
@@ -50,6 +48,10 @@ private slots:
        void updateFileProgress(qint64);
        void displayError(QAbstractSocket::SocketError);
        void acceptConnection();
+       void showSuccess();
+       void updateServerProgress();
+       void slotTcpListen();
+
 };
 
 #endif // TCP_H

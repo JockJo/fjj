@@ -33,6 +33,7 @@ login::login(QWidget *parent) :
     ui->changAccountButton->setCursor(Qt::PointingHandCursor);
     ui->changAccountButton->setStyleSheet("QPushButton{color:rgb(67,104,149);font-size:16px;font-weight:bold;border-style:inset;}");
 
+
     //隐藏边框
     this->setWindowFlags(Qt::FramelessWindowHint);
     this->show();
@@ -79,4 +80,11 @@ void login::on_exitButton_clicked()
 {
     delete ui;
     this->close();
+}
+
+void login::on_changAccountButton_clicked()
+{
+    delete ui;
+    this->close();
+    set* s = new set();
 }

@@ -20,9 +20,9 @@
    <property name="geometry">
     <rect>
      <x>71</x>
-     <y>0</y>
+     <y>72</y>
      <width>312</width>
-     <height>800</height>
+     <height>731</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -219,24 +219,6 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
   </widget>
-  <widget class="QPushButton" name="addfriendButton">
-   <property name="geometry">
-    <rect>
-     <x>340</x>
-     <y>30</y>
-     <width>30</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(89, 89, 89);
-font: 25 17pt &quot;等线 Light&quot;;
-</string>
-   </property>
-   <property name="text">
-    <string>+</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="tolkingButton">
    <property name="geometry">
     <rect>
@@ -302,16 +284,6 @@ font: 25 17pt &quot;等线 Light&quot;;
     <string notr="true"/>
    </property>
   </widget>
-  <widget class="QLineEdit" name="searchLineEdit">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>30</y>
-     <width>235</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="userPhotolabel">
    <property name="geometry">
     <rect>
@@ -325,6 +297,61 @@ font: 25 17pt &quot;等线 Light&quot;;
     <string/>
    </property>
   </widget>
+  <widget class="QListWidget" name="fListWidget">
+   <property name="geometry">
+    <rect>
+     <x>71</x>
+     <y>0</y>
+     <width>312</width>
+     <height>73</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(238, 234, 232);
+border-color: rgb(231, 230, 229);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="searchLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>20</y>
+     <width>235</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addfriendButton">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>20</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(89, 89, 89);
+font: 25 17pt &quot;等线 Light&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string>+</string>
+   </property>
+  </widget>
+  <zorder>toolListWidget</zorder>
+  <zorder>friendsListWidget</zorder>
+  <zorder>bottomWidget</zorder>
+  <zorder>tolkingButton</zorder>
+  <zorder>friendButton</zorder>
+  <zorder>collectionButton</zorder>
+  <zorder>settingButton</zorder>
+  <zorder>listView</zorder>
+  <zorder>userPhotolabel</zorder>
+  <zorder>fListWidget</zorder>
+  <zorder>searchLineEdit</zorder>
+  <zorder>addfriendButton</zorder>
+  <zorder>topWidget</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

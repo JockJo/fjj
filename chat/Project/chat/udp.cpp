@@ -35,6 +35,8 @@ void udp::send()
 //读取收到的信息
 void udp::processPendingDatagram()
 {
+    QSqlDatabase db = QSqlDatabase::database("connection1");
+    QSqlQuery query(db);
     QByteArray datagram;
     QByteArray checkReplay = QByteArray("REPLAY");
 
@@ -49,14 +51,27 @@ void udp::processPendingDatagram()
         else if( datagram.contains(checkReplay))
         {
             datagram.remove(0,6);
-            //存储应答
             DebugIpAddress = datagram;
+            //存储应答到数据库中
+            query.prepare("insert to ip (address) values (?)");
+            QString address;
+            address.append(datagram);
+            query.addBindValue(address);
+            query.exec();
+
             qDebug() << datagram << endl;
         }
         else
         {
-            /*存储IP地址*/
+
             DebugIpAddress = datagram;
+            //存储IP地址到数据库中
+            query.prepare("insert to ip (address) values (?)");
+            QString address;
+            address.append(datagram);
+            query.addBindValue(address);
+            query.exec();
+
             replay(&datagram);
         }
     }
@@ -69,9 +84,9 @@ void udp::replay(QByteArray* datagram)
     QHos.setAddress((*datagram).data());
     QByteArray datagram1 = QByteArray("REPLAY");
     datagram1.append(QHostAddressIPv4.toAscii());
-    qDebug() << datagram1 << endl;
+//    qDebug() << datagram1 << endl;
     udpApplication->writeDatagram(datagram1.data(),datagram1.size(),
-                          QHos,3333);
+                          QHos,PORT);
 }
 
 //获取IP地址

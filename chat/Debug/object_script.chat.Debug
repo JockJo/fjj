@@ -4,9 +4,11 @@ INPUT(
 ./debug\chat.o
 ./debug\tcp.o
 ./debug\udp.o
+./debug\set.o
 ./debug\moc_login.o
 ./debug\moc_chat.o
 ./debug\moc_tcp.o
 ./debug\moc_udp.o
+./debug\moc_set.o
 ./debug\qrc_myimages.o
 );

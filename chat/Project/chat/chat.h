@@ -26,6 +26,7 @@ class chat : public QWidget
 public:
     explicit chat(QWidget *parent = 0);
     ~chat();
+    void displayFriends();
 
 private:
     Ui::chat *ui;
@@ -49,6 +50,7 @@ private slots:
     void on_sendButton_clicked();
     void on_addfriendButton_clicked();
     void on_collectionButton_clicked();
+    void on_tolkingButton_clicked();
 };
 
 #endif // CHAT_H

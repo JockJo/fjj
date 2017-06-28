@@ -6,6 +6,7 @@
 #include <QSizePolicy>
 #include <QHBoxLayout>
 #include <QDebug>
+#include <main.h>
 
 namespace Ui {
 class login;
@@ -23,6 +24,8 @@ private slots:
     void on_loginButton_clicked();
 
     void on_exitButton_clicked();
+
+    void on_changAccountButton_clicked();
 
 private:
     Ui::login *ui;

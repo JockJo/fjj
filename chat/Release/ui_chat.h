@@ -42,14 +42,15 @@ public:
     QPushButton *emojiButton;
     QPushButton *phoneButton;
     QProgressBar *sendFileProgressBar;
-    QPushButton *addfriendButton;
     QPushButton *tolkingButton;
     QPushButton *friendButton;
     QPushButton *collectionButton;
     QPushButton *settingButton;
     QListView *listView;
-    QLineEdit *searchLineEdit;
     QLabel *userPhotolabel;
+    QListWidget *fListWidget;
+    QLineEdit *searchLineEdit;
+    QPushButton *addfriendButton;
 
     void setupUi(QWidget *chat)
     {
@@ -59,7 +60,7 @@ public:
         chat->setStyleSheet(QString::fromUtf8("background-color: rgb(245, 245, 245);"));
         friendsListWidget = new QListWidget(chat);
         friendsListWidget->setObjectName(QString::fromUtf8("friendsListWidget"));
-        friendsListWidget->setGeometry(QRect(71, 0, 312, 800));
+        friendsListWidget->setGeometry(QRect(71, 72, 312, 731));
         friendsListWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(238, 234, 232);\n"
 "border-color: rgb(231, 230, 229);"));
         toolListWidget = new QListWidget(chat);
@@ -113,12 +114,6 @@ public:
         sendFileProgressBar->setObjectName(QString::fromUtf8("sendFileProgressBar"));
         sendFileProgressBar->setGeometry(QRect(250, 20, 118, 23));
         sendFileProgressBar->setValue(0);
-        addfriendButton = new QPushButton(chat);
-        addfriendButton->setObjectName(QString::fromUtf8("addfriendButton"));
-        addfriendButton->setGeometry(QRect(340, 30, 30, 30));
-        addfriendButton->setStyleSheet(QString::fromUtf8("color: rgb(89, 89, 89);\n"
-"font: 25 17pt \"\347\255\211\347\272\277 Light\";\n"
-""));
         tolkingButton = new QPushButton(chat);
         tolkingButton->setObjectName(QString::fromUtf8("tolkingButton"));
         tolkingButton->setGeometry(QRect(20, 70, 33, 33));
@@ -135,12 +130,36 @@ public:
         listView->setObjectName(QString::fromUtf8("listView"));
         listView->setGeometry(QRect(382, 72, 694, 551));
         listView->setStyleSheet(QString::fromUtf8(""));
-        searchLineEdit = new QLineEdit(chat);
-        searchLineEdit->setObjectName(QString::fromUtf8("searchLineEdit"));
-        searchLineEdit->setGeometry(QRect(90, 30, 235, 31));
         userPhotolabel = new QLabel(chat);
         userPhotolabel->setObjectName(QString::fromUtf8("userPhotolabel"));
         userPhotolabel->setGeometry(QRect(16, 10, 40, 41));
+        fListWidget = new QListWidget(chat);
+        fListWidget->setObjectName(QString::fromUtf8("fListWidget"));
+        fListWidget->setGeometry(QRect(71, 0, 312, 73));
+        fListWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(238, 234, 232);\n"
+"border-color: rgb(231, 230, 229);"));
+        searchLineEdit = new QLineEdit(chat);
+        searchLineEdit->setObjectName(QString::fromUtf8("searchLineEdit"));
+        searchLineEdit->setGeometry(QRect(80, 20, 235, 31));
+        addfriendButton = new QPushButton(chat);
+        addfriendButton->setObjectName(QString::fromUtf8("addfriendButton"));
+        addfriendButton->setGeometry(QRect(340, 20, 30, 30));
+        addfriendButton->setStyleSheet(QString::fromUtf8("color: rgb(89, 89, 89);\n"
+"font: 25 17pt \"\347\255\211\347\272\277 Light\";\n"
+""));
+        toolListWidget->raise();
+        friendsListWidget->raise();
+        bottomWidget->raise();
+        tolkingButton->raise();
+        friendButton->raise();
+        collectionButton->raise();
+        settingButton->raise();
+        listView->raise();
+        userPhotolabel->raise();
+        fListWidget->raise();
+        searchLineEdit->raise();
+        addfriendButton->raise();
+        topWidget->raise();
 
         retranslateUi(chat);
 
@@ -163,12 +182,12 @@ public:
         sendFileButton->setText(QString());
         emojiButton->setText(QString());
         phoneButton->setText(QString());
-        addfriendButton->setText(QApplication::translate("chat", "+", 0, QApplication::UnicodeUTF8));
         tolkingButton->setText(QString());
         friendButton->setText(QString());
         collectionButton->setText(QString());
         settingButton->setText(QString());
         userPhotolabel->setText(QString());
+        addfriendButton->setText(QApplication::translate("chat", "+", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

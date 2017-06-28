@@ -38,7 +38,7 @@ chat::chat(QWidget *parent) :
     ui->sendFileButton->setStyleSheet("QPushButton{background-color:rgb(255,255,255);border-image:url(:/myImages/label/folder.png);border-style:inset;}"
                                    "QPushButton:hover{background-color:rgb(255,255,255);border-image:url(:/myImages/label/folder2.png);border-style:inset;}");
 
-    //设置文件图标按钮
+    //设置电话图标按钮
     ui->phoneButton->setCursor(Qt::PointingHandCursor);
     ui->phoneButton->setStyleSheet("QPushButton{background-color:rgb(255,255,255);border-image:url(:/myImages/label/phone2.png);border-style:inset;}"
                                    "QPushButton:hover{background-color:rgb(255,255,255);border-image:url(:/myImages/label/phone.png);border-style:inset;}");
@@ -55,6 +55,7 @@ chat::chat(QWidget *parent) :
 
     //设置朋友列表框
     ui->friendsListWidget->setFrameShape(QListWidget::NoFrame);
+    ui->fListWidget->setFrameShape(QListWidget::NoFrame);
 
     //设置工具列表框
     ui->toolListWidget->setFrameShape(QListWidget::NoFrame);
@@ -96,9 +97,9 @@ chat::chat(QWidget *parent) :
     result = image.scaled(ui->userPhotolabel->width(),ui->userPhotolabel->height(),Qt::IgnoreAspectRatio,
                           Qt::SmoothTransformation);
     ui->userPhotolabel->setPixmap(QPixmap::fromImage(result));
+
     tc = new tcp(this);
     ud = new udp(this);
-    tc->tcpListen();
 }
 
 //全屏显示
@@ -150,18 +151,12 @@ void chat::on_maxSizeButton_clicked()
  //   this->fullScreen();
 }
 
-//发送文件
+//打开文件
 void chat::on_sendFileButton_clicked()
 {
     QString filename;
     tc->openFile();
-    if( (filename = tc->gotFilename()).isEmpty() )
-    {
-       QDialog* fileError = new QDialog(this);
-       fileError->setWindowTitle("ERROR");
-       fileError->show();
-    }
-    else
+    if( !(filename = tc->gotFilename()).isEmpty() )
     {
        ui->textEdit->setText(tc->gotFilename());
     }
@@ -173,14 +168,35 @@ void chat::setProgressBar(qint64 max, qint64 value)
     ui->sendFileProgressBar->setValue(value);
 }
 
+//发送内容
 void chat::on_sendButton_clicked()
 {
     tc->startSendFile();
+    qDebug() << tc->gotFilename();
 }
 
 void chat::on_addfriendButton_clicked()
 {
     ud->send();
+    displayFriends();
+}
+
+//更新朋友列表
+void chat::displayFriends()
+{
+    QStringList addressList;
+   /*  ui->friendsListWidget->clear();
+    QSqlDatabase db = QSqlDatabase::database("connection1");
+    QSqlQuery query(db);
+    while(query.next())
+    {
+        addressList.append( query.value(0).toString() );
+    }
+    */
+    QString address;
+    addressList.append(address.append(ud->gotDebugIp()));
+    ui->friendsListWidget->addItems(addressList);
+
 }
 
 void chat::on_collectionButton_clicked()
@@ -189,4 +205,9 @@ void chat::on_collectionButton_clicked()
     QString address;
     address.append(ip);
     tc->setConnection(address);
+}
+
+void chat::on_tolkingButton_clicked()
+{
+    displayFriends();
 }

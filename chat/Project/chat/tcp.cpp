@@ -5,17 +5,34 @@ tcp::tcp(QWidget *parent) : QDialog(parent)
      tcpApplication = new QTcpSocket(this);
      tcpServer = new QTcpServer(this);
 
+     payloadSize = 64*1024;
+     totalBytes = 0;
+     bytesWritten = 0;
+     bytesToWrite = 0;
+
      QObject::connect(tcpApplication, SIGNAL(bytesWritten(qint64)),
              this, SLOT(updateFileProgress(qint64)));
 
      QObject::connect(tcpApplication, SIGNAL(error(QAbstractSocket::SocketError)),
              this,  SLOT(displayError(QAbstractSocket::SocketError)));
 
+     QObject::connect(tcpApplication, SIGNAL(readyRead()),
+                      this, SLOT(updateServerProgress()));
+     //建立连接显示debugshow
+     QObject::connect(tcpApplication, SIGNAL(connected()),
+             this, SLOT(showSuccess()) );
+
+ //    QObject::connect(tcpApplication, SIGNAL(disconnected()),
+ //                     this, SLOT(slotTcpListen()));
+
      QObject::connect(tcpServer, SIGNAL(newConnection()),
                       this, SLOT(acceptConnection()));
+
+     //默认开服务器进行端口监听
+     this->tcpListen();
 }
 
-//与某位用户建立建立TCP连接
+//与某位用户服务器建立建立TCP连接
 void tcp::setConnection(const QString &address)
 {
     QByteArray  out = address.toAscii();
@@ -23,8 +40,14 @@ void tcp::setConnection(const QString &address)
     tcpServer->close();
 
     //取消已有连接，建立新的连接
-    tcpApplication->abort();
+//    tcpApplication->abort();
     tcpApplication->connectToHost(address, PORT);
+
+    QObject::disconnect(tcpApplication, SIGNAL(readyRead()),
+                     this, SLOT(updateServerProgress()));
+
+    QObject::connect(tcpApplication, SIGNAL(readyRead()),
+                     this, SLOT(updateServerProgress()));
 }
 
 //开始进行文件传输
@@ -87,7 +110,13 @@ bool tcp::openFile()
     return false;
 }
 
-//端口监听
+//tcp监听槽
+void tcp::slotTcpListen()
+{
+    this->tcpListen();
+}
+
+//开启服务器端口监听
 void tcp::tcpListen()
 {
     if( !tcpServer->listen(QHostAddress::Any,PORT) )
@@ -101,15 +130,29 @@ void tcp::tcpListen()
     fileNameSize = 0;
 }
 
-//接受连接
+//接受客户端连接请求
 void tcp::acceptConnection()
 {
+
+    QObject::disconnect(tcpApplication, SIGNAL(readyRead()),
+                        this, SLOT(updateServerProgress()));
+
+    QObject::disconnect(tcpApplication, SIGNAL(bytesWritten(qint64)),
+                        this, SLOT(updateFileProgress(qint64)));
+
+    QObject::disconnect(tcpApplication, SIGNAL(error(QAbstractSocket::SocketError)),
+            this,  SLOT(displayError(QAbstractSocket::SocketError)));
+
     tcpApplication = tcpServer->nextPendingConnection();
 
-    connect(tcpApplication, SIGNAL(readyRead()),
+    QObject::connect(tcpApplication, SIGNAL(bytesWritten(qint64)),
+            this, SLOT(updateFileProgress(qint64)));
+
+    QObject::connect(tcpApplication, SIGNAL(readyRead()),
             this, SLOT(updateServerProgress()));
-    connect(tcpApplication, SIGNAL(error(QAbstractSocket::SocketError)),
-            this, SLOT(displayError(QAbstractSocket::SocketError)));
+
+    QObject::connect(tcpApplication, SIGNAL(error(QAbstractSocket::SocketError)),
+            this,  SLOT(displayError(QAbstractSocket::SocketError)));
 
     //关闭监听
     tcpServer->close();
@@ -176,6 +219,13 @@ void tcp::updateServerProgress()
 //        ui->serverStatusLabel->setText(tr("listning"));
 //        ui->serverProgressBar->reset();
     }
+}
+
+//DEBUGshow
+void tcp::showSuccess()
+{
+    QDialog* qg = new QDialog();
+    qg->show();
 }
 
 QString tcp::gotFilename()

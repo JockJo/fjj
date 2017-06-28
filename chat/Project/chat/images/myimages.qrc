@@ -18,5 +18,9 @@
         <file>label/friends3.png</file>
         <file>label/list.png</file>
         <file>label/list2.png</file>
+        <file>label/account.png</file>
+        <file>label/account2.png</file>
+        <file>label/setting.png</file>
+        <file>label/setting2.png</file>
     </qresource>
 </RCC>

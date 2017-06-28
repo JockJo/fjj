@@ -4,9 +4,11 @@ INPUT(
 ./release\chat.o
 ./release\tcp.o
 ./release\udp.o
+./release\set.o
 ./release\moc_login.o
 ./release\moc_chat.o
 ./release\moc_tcp.o
 ./release\moc_udp.o
+./release\moc_set.o
 ./release\qrc_myimages.o
 );
