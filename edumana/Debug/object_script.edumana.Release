@@ -1,0 +1,15 @@
+INPUT(
+./release\edumana.o
+./release\login.o
+./release\main.o
+./release\set.o
+./release\student.o
+./release\teacher.o
+./release\db.o
+./release\qrc_images.o
+./release\moc_edumana.o
+./release\moc_login.o
+./release\moc_set.o
+./release\moc_student.o
+./release\moc_teacher.o
+);

@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>student</class>
+ <widget class="QMainWindow" name="student">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1026</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame_top">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1026</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_background">
+     <property name="geometry">
+      <rect>
+       <x>445</x>
+       <y>0</y>
+       <width>601</width>
+       <height>65</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QFrame" name="frame_background">
+     <property name="geometry">
+      <rect>
+       <x>452</x>
+       <y>65</y>
+       <width>574</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="button_select_course">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>120</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>选课报名</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_innovations">
+      <property name="geometry">
+       <rect>
+        <x>118</x>
+        <y>0</y>
+        <width>120</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>创新项目</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_infosearch">
+      <property name="geometry">
+       <rect>
+        <x>236</x>
+        <y>0</y>
+        <width>120</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>信息查询</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_more">
+      <property name="geometry">
+       <rect>
+        <x>354</x>
+        <y>0</y>
+        <width>120</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <zorder>frame_background</zorder>
+    <zorder>label_background</zorder>
+   </widget>
+   <widget class="QFrame" name="frame_left">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>100</y>
+      <width>141</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="button_infor_search">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>141</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>信息查询</string>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_course_search">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>32</y>
+       <width>141</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>课表查询</string>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_class_course">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>64</y>
+       <width>141</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>班级课表</string>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_grade_test">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>96</y>
+       <width>141</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>考级成绩</string>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_grade_course">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>128</y>
+       <width>141</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>课程成绩</string>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_test_scheme">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>256</y>
+       <width>141</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>考试安排</string>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_study_plan">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>192</y>
+       <width>141</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>学习计划</string>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_innovation">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>160</y>
+       <width>141</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>创新项目</string>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_training_scheme">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>224</y>
+       <width>141</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>培养方案</string>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_main">
+    <property name="geometry">
+     <rect>
+      <x>139</x>
+      <y>99</y>
+      <width>891</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="size_putton">
+     <property name="geometry">
+      <rect>
+       <x>843</x>
+       <y>0</y>
+       <width>46</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="putton_delete">
+     <property name="geometry">
+      <rect>
+       <x>800</x>
+       <y>0</y>
+       <width>46</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="main_table">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>35</y>
+       <width>891</width>
+       <height>466</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QFrame" name="main_frame">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>891</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="label_desktop">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>100</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string> 我的桌面</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

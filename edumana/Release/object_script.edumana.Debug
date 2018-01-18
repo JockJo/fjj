@@ -1,0 +1,15 @@
+INPUT(
+./debug\edumana.o
+./debug\login.o
+./debug\main.o
+./debug\set.o
+./debug\student.o
+./debug\teacher.o
+./debug\db.o
+./debug\qrc_images.o
+./debug\moc_edumana.o
+./debug\moc_login.o
+./debug\moc_set.o
+./debug\moc_student.o
+./debug\moc_teacher.o
+);
