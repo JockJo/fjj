@@ -83,7 +83,7 @@ color: rgb(254, 254, 254);</string>
     <rect>
      <x>20</x>
      <y>20</y>
-     <width>91</width>
+     <width>121</width>
      <height>21</height>
     </rect>
    </property>
@@ -91,7 +91,7 @@ color: rgb(254, 254, 254);</string>
     <string notr="true">color: rgb(74, 74, 74);</string>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#4a4a4a;&quot;&gt;JJ EduM &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#4a4a4a;&quot;&gt;学籍管理系统 &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QPushButton" name="changAccountButton">

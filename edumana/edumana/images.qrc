@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/myImages">
         <file>images/1.jpg</file>
-        <file>images/云朵.jpg</file>
+        <file>images/clound.jpg</file>
+        <file>images/gdut.png</file>
     </qresource>
 </RCC>

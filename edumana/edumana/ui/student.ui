@@ -57,7 +57,7 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QPushButton" name="button_select_course">
+     <widget class="QPushButton" name="button_manaRoll">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -67,10 +67,10 @@
        </rect>
       </property>
       <property name="text">
-       <string>选课报名</string>
+       <string>学籍管理</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="button_innovations">
+     <widget class="QPushButton" name="button_innovation">
       <property name="geometry">
        <rect>
         <x>118</x>
@@ -110,8 +110,22 @@
       </property>
      </widget>
     </widget>
+    <widget class="QLabel" name="label_background_2">
+     <property name="geometry">
+      <rect>
+       <x>-2</x>
+       <y>10</y>
+       <width>239</width>
+       <height>53</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
     <zorder>frame_background</zorder>
     <zorder>label_background</zorder>
+    <zorder>label_background_2</zorder>
    </widget>
    <widget class="QFrame" name="frame_left">
     <property name="geometry">
@@ -144,7 +158,7 @@
       <bool>false</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="button_course_search">
+    <widget class="QPushButton" name="button_grade_search">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -154,13 +168,13 @@
       </rect>
      </property>
      <property name="text">
-      <string>课表查询</string>
+      <string>成绩查询</string>
      </property>
      <property name="autoDefault">
       <bool>false</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="button_class_course">
+    <widget class="QPushButton" name="button_roll_search">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -170,103 +184,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>班级课表</string>
-     </property>
-     <property name="autoDefault">
-      <bool>false</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="button_grade_test">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>96</y>
-       <width>141</width>
-       <height>35</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>考级成绩</string>
-     </property>
-     <property name="autoDefault">
-      <bool>false</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="button_grade_course">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>128</y>
-       <width>141</width>
-       <height>35</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>课程成绩</string>
-     </property>
-     <property name="autoDefault">
-      <bool>false</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="button_test_scheme">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>256</y>
-       <width>141</width>
-       <height>35</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>考试安排</string>
-     </property>
-     <property name="autoDefault">
-      <bool>false</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="button_study_plan">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>192</y>
-       <width>141</width>
-       <height>35</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>学习计划</string>
-     </property>
-     <property name="autoDefault">
-      <bool>false</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="button_innovation">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>160</y>
-       <width>141</width>
-       <height>35</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>创新项目</string>
-     </property>
-     <property name="autoDefault">
-      <bool>false</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="button_training_scheme">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>224</y>
-       <width>141</width>
-       <height>35</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>培养方案</string>
+      <string>学籍查询</string>
      </property>
      <property name="autoDefault">
       <bool>false</bool>
@@ -314,16 +232,6 @@
       <string/>
      </property>
     </widget>
-    <widget class="QTableWidget" name="main_table">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>35</y>
-       <width>891</width>
-       <height>466</height>
-      </rect>
-     </property>
-    </widget>
     <widget class="QFrame" name="main_frame">
      <property name="geometry">
       <rect>
@@ -352,11 +260,318 @@
        </rect>
       </property>
       <property name="text">
-       <string> 我的桌面</string>
+       <string>  我的桌面</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_innovation">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>0</y>
+        <width>100</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>  创新项目</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_grade_search">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>0</y>
+        <width>100</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>  成绩查询</string>
       </property>
      </widget>
     </widget>
+    <widget class="QTableWidget" name="table_grade">
+     <property name="geometry">
+      <rect>
+       <x>2</x>
+       <y>70</y>
+       <width>891</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <column>
+      <property name="text">
+       <string>申报人编号</string>
+      </property>
+      <property name="background">
+       <color alpha="0">
+        <red>241</red>
+        <green>241</green>
+        <blue>241</blue>
+       </color>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>申报人姓名</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>课题编号</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>课程名称</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>批次名称</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>课题简介</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>指导教师一</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QTableWidget" name="table_grade_2">
+     <property name="geometry">
+      <rect>
+       <x>2</x>
+       <y>105</y>
+       <width>891</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <column>
+      <property name="text">
+       <string>3214002920</string>
+      </property>
+      <property name="background">
+       <color alpha="0">
+        <red>241</red>
+        <green>241</green>
+        <blue>241</blue>
+       </color>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>张小轩</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>A1111</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>流行音乐研究</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>2018春季</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>暂无</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>陈奕迅</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QFrame" name="main_frame_pro">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>35</y>
+       <width>891</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="label_apply_pro">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>100</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>  申报项目</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_search_pro">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>0</y>
+        <width>100</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>  已选课题</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_update_pro">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>0</y>
+        <width>100</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>  修改项目</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QTableWidget" name="table_grade_3">
+     <property name="geometry">
+      <rect>
+       <x>2</x>
+       <y>140</y>
+       <width>891</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <column>
+      <property name="text">
+       <string>指导教师二</string>
+      </property>
+      <property name="background">
+       <color alpha="0">
+        <red>241</red>
+        <green>241</green>
+        <blue>241</blue>
+       </color>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>教师联系方式一</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>选题开始时间</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>选题结束时间</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>申报资金</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>审核状态</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>操作</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QTableWidget" name="table_grade_4">
+     <property name="geometry">
+      <rect>
+       <x>2</x>
+       <y>170</y>
+       <width>891</width>
+       <height>331</height>
+      </rect>
+     </property>
+     <column>
+      <property name="text">
+       <string>周杰伦</string>
+      </property>
+      <property name="background">
+       <color alpha="0">
+        <red>241</red>
+        <green>241</green>
+        <blue>241</blue>
+       </color>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>13387987892</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>2018.1.1</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>2019.1.1</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>10000</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>受审</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>暂无</string>
+      </property>
+     </column>
+    </widget>
    </widget>
+   <zorder>frame_top</zorder>
+   <zorder>frame_main</zorder>
+   <zorder>frame_left</zorder>
   </widget>
  </widget>
  <resources/>

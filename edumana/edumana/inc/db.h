@@ -2,12 +2,15 @@
 #define DB_H
 
 #include    <QSqlDatabase>
+#include    <QMessageBox>
+#include    <QDebug>
+#include    <QCoreApplication>
 
 
 class db
 {
 public:
-    db();
+    explicit db();
     bool getStatus();
 private:
     bool ok;

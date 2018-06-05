@@ -30,8 +30,8 @@ SOURCES += \
     src/main.cpp \
     src/set.cpp \
     src/student.cpp \
-    src/teacher.cpp \
-    src/db.cpp
+    src/db.cpp \
+    src/teacher.cpp
 
 HEADERS += \
     inc/main.h \

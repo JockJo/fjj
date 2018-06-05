@@ -21,7 +21,7 @@
     <rect>
      <x>20</x>
      <y>20</y>
-     <width>91</width>
+     <width>131</width>
      <height>21</height>
     </rect>
    </property>
@@ -29,7 +29,7 @@
     <string notr="true">color: rgb(74, 74, 74);</string>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JJ EduM&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;学籍管理系统-注册&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QPushButton" name="exitButton">
@@ -88,7 +88,7 @@ font: 10pt &quot;幼圆&quot;;
    <property name="geometry">
     <rect>
      <x>43</x>
-     <y>324</y>
+     <y>360</y>
      <width>262</width>
      <height>50</height>
     </rect>
@@ -114,7 +114,7 @@ color: rgb(254, 254, 254);</string>
     </rect>
    </property>
    <property name="text">
-    <string>input username</string>
+    <string> </string>
    </property>
   </widget>
   <widget class="QPushButton" name="userPhotoButton">
@@ -128,6 +128,19 @@ color: rgb(254, 254, 254);</string>
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_2">
+   <property name="geometry">
+    <rect>
+     <x>114</x>
+     <y>320</y>
+     <width>121</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string> </string>
    </property>
   </widget>
  </widget>

@@ -6,6 +6,7 @@ teacher::teacher(QWidget *parent) :
     ui(new Ui::teacher)
 {
     ui->setupUi(this);
+    this->setWindowTitle(QStringLiteral("—ß…˙—ßºÆπ‹¿ÌœµÕ≥-π‹¿Ì‘±∂À"));
     this->set_left();
     this->set_main();
     this->set_top();
@@ -19,51 +20,98 @@ teacher::~teacher()
 
 void teacher::set_top(){
     QImage image, result;
-    image.load(":/myImages/images/‰∫ëÊúµ.jpg");
+    image.load(":/myImages/images/clound.jpg");
     result = image.scaled(ui->label_background->width(),ui->label_background->height(),Qt::IgnoreAspectRatio,
                           Qt::SmoothTransformation);
     ui->label_background->setPixmap(QPixmap::fromImage(result));
 
+    image.load(":/myImages/images/gdut.png");
+    result = image.scaled(ui->label_background_2->width(),ui->label_background_2->height(),Qt::IgnoreAspectRatio,
+                          Qt::SmoothTransformation);
+    ui->label_background_2->setPixmap(QPixmap::fromImage(result));
+
     ui->frame_background->setStyleSheet("QFrame{background-color:rgb(194,218,244);font-size:16px;font-weight:bold;}");
     ui->frame_top->setStyleSheet("QFrame{background-color:rgb(255,255,255);font-size:16px;font-weight:bold;}");
 
-    QMenu *subMenu_select = new QMenu(this);
-    subMenu_select->setTitle("ËØæÁ®ãÂÆâÊéí");
-    subMenu_select->setStyleSheet("QMenu{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
+    QMenu *subMenu_inputgrade = new QMenu(this);
+    subMenu_inputgrade->setTitle(QStringLiteral("¬º»Î∑÷ ˝"));
+    subMenu_inputgrade->setStyleSheet("QMenu{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
                                   "QMenu:hover{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
                                   "QMenu:pressed{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}");
-    action_subMenu_select(subMenu_select);
+    action_subMenu_select(subMenu_inputgrade);
 
-    QMenu *subMenu_evaluate = new QMenu(this);
-    subMenu_evaluate->setTitle("ÊàêÁª©ÁÆ°ÁêÜ");
-    subMenu_evaluate->setStyleSheet("QMenu{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
+    QMenu *subMenu_changegrade = new QMenu(this);
+    subMenu_changegrade->setTitle(QStringLiteral("–ﬁ∏ƒ∑÷ ˝"));
+    subMenu_changegrade->setStyleSheet("QMenu{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
                                     "QMenu:hover{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
                                     "QMenu:pressed{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}");
-    action_subMenu_evaluate(subMenu_evaluate);
+    action_subMenu_evaluate(subMenu_changegrade);
 
     QMenu *subMenu_innovations = new QMenu(this);
-    subMenu_innovations->setTitle("Áî≥ËØ∑È°πÁõÆ");
+    subMenu_innovations->setTitle(QStringLiteral("…Í«ÎœÓƒø"));
     subMenu_innovations->setStyleSheet("QMenu{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
                                     "QMenu:hover{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
                                     "QMenu:pressed{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}");
     action_subMenu_innovations(subMenu_innovations);
 
     QMenu *subMenu_regist = new QMenu(this);
-    subMenu_regist->setTitle("‰øÆÊîπÈ°πÁõÆ");
+    subMenu_regist->setTitle(QStringLiteral("–ﬁ∏ƒœÓƒø"));
     subMenu_regist->setStyleSheet("QMenu{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
                                     "QMenu:hover{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
                                     "QMenu:pressed{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}");
     action_subMenu_regist(subMenu_regist);
 
 
-    QMenu *menu_select_course = new QMenu(this);
-    menu_select_course->setStyleSheet("QMenu{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
+    QMenu *subMenu_infosrc= new QMenu(this);
+    subMenu_infosrc->setTitle(QStringLiteral("µº»Î—ß…˙…˙‘¥–≈œ¢"));
+    subMenu_infosrc->setStyleSheet("QMenu{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
+                                    "QMenu:hover{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
+                                    "QMenu:pressed{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}");
+//    action_subMenu_infosrc(subMenu_infosrc);
+
+    QMenu *subMenu_infointer = new QMenu(this);
+    subMenu_infointer->setTitle(QStringLiteral("—ß…˙–£ƒ⁄–≈œ¢"));
+    subMenu_infointer->setStyleSheet("QMenu{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
+                                    "QMenu:hover{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
+                                    "QMenu:pressed{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}");
+//    action_subMenu_infointer(subMenu_infointer);
+
+    QMenu *subMenu_searchinfo = new QMenu(this);
+    subMenu_searchinfo->setTitle(QStringLiteral("—ßºÆ≤È’“"));
+    subMenu_searchinfo->setStyleSheet("QMenu{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
+                                    "QMenu:hover{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
+                                    "QMenu:pressed{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}");
+//    action_subMenu_searchinfo(subMenu_searchinfo);
+
+    QMenu *subMenu_changepasswd = new QMenu(this);
+    subMenu_changepasswd->setTitle(QStringLiteral("–ﬁ∏ƒ√‹¬Î"));
+    subMenu_changepasswd->setStyleSheet("QMenu{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
+                                    "QMenu:hover{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
+                                    "QMenu:pressed{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}");
+//    action_subMenu_searchinfo(subMenu_searchinfo);
+
+
+    QMenu *subMenu_adduser = new QMenu(this);
+    subMenu_adduser->setTitle(QStringLiteral("‘ˆº””√ªß"));
+    subMenu_adduser->setStyleSheet("QMenu{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
+                                    "QMenu:hover{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
+                                    "QMenu:pressed{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}");
+//    action_subMenu_searchinfo(subMenu_searchinfo);
+
+    QMenu *subMenu_deleteuser = new QMenu(this);
+    subMenu_deleteuser ->setTitle(QStringLiteral("…æ≥˝”√ªß"));
+    subMenu_deleteuser ->setStyleSheet("QMenu{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
+                                    "QMenu:hover{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
+                                    "QMenu:pressed{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}");
+//    action_subMenu_searchinfo(subMenu_searchinfo);
+
+    QMenu *menu_managrade = new QMenu(this);
+    menu_managrade->setStyleSheet("QMenu{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
                                       "QMenu:hover{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
                                       "QMenu:pressed{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}");
-
-    menu_select_course->addMenu(subMenu_select);
-    menu_select_course->addMenu(subMenu_evaluate);
-    ui->button_select_course->setMenu(menu_select_course);
+    menu_managrade->addMenu(subMenu_inputgrade);
+    menu_managrade->addMenu(subMenu_changegrade);
+    ui->button_managrade->setMenu(menu_managrade);
 
     QMenu *menu_innovations = new QMenu(this);
     ui->button_innovations->setMenu(menu_innovations);
@@ -73,16 +121,30 @@ void teacher::set_top(){
     menu_innovations->addMenu(subMenu_innovations);
     menu_innovations->addMenu(subMenu_regist);
 
-    QMenu *menu_inforsearch = new QMenu(this);
-    ui->button_infosearch->setMenu(menu_inforsearch);
-    menu_inforsearch->setStyleSheet("QMenu{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
+
+    QMenu *menu_manaroll = new QMenu(this);
+    ui->button_manaroll->setMenu(menu_manaroll);
+    menu_manaroll->setStyleSheet("QMenu{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
                                       "QMenu:hover{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
                                       "QMenu:pressed{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}");
+    menu_manaroll->addMenu(subMenu_infosrc);
+    menu_manaroll->addMenu(subMenu_infointer);
+    menu_manaroll->addMenu(subMenu_searchinfo);
 
-    ui->button_select_course->setStyleSheet("background-color:rgb(194,218,244);border-color:rgb(194,218,244);font-size:16px;font-weight:bold;");
+
+    QMenu *menu_manage = new QMenu(this);
+    ui->button_manage->setMenu(menu_manage);
+    menu_manage->setStyleSheet("QMenu{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
+                                      "QMenu:hover{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}"
+                                      "QMenu:pressed{background-color:rgb(234,242,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;}");
+    menu_manage->addMenu(subMenu_changepasswd);
+    menu_manage->addMenu(subMenu_adduser);
+    menu_manage->addMenu(subMenu_deleteuser);
+
+    ui->button_managrade->setStyleSheet("background-color:rgb(194,218,244);border-color:rgb(194,218,244);font-size:16px;font-weight:bold;");
     ui->button_innovations->setStyleSheet("background-color:rgb(194,218,244);border-color:rgb(194,218,244);font-size:16px;font-weight:bold;");
-    ui->button_more->setStyleSheet("background-color:rgb(194,218,244);border-color:rgb(194,218,244);font-size:16px;font-weight:bold;");
-    ui->button_infosearch->setStyleSheet("background-color:rgb(194,218,244);border-color:rgb(194,218,244);font-size:16px;font-weight:bold;");
+    ui->button_manage->setStyleSheet("background-color:rgb(194,218,244);border-color:rgb(194,218,244);font-size:16px;font-weight:bold;");
+    ui->button_manaroll->setStyleSheet("background-color:rgb(194,218,244);border-color:rgb(194,218,244);font-size:16px;font-weight:bold;");
 
     ui->centralwidget->setWindowTitle("eduM:teacher");
 
@@ -90,7 +152,11 @@ void teacher::set_top(){
 
 void teacher::set_main(){
     ui->main_frame->setStyleSheet("QFrame{background-color:rgb(224,236,255);font-size:16px;font-weight:bold;}");
-    ui->label_desktop->setStyleSheet("QLabel{background-color:rgb(246,249,255);font-size:16px;font-weight:bold;}");
+    ui->main_frame_grade->setStyleSheet("QFrame{background-color:rgb(224,236,255);font-size:16px;font-weight:bold;}");
+    ui->main_frame_grade_2->setStyleSheet("QFrame{background-color:rgb(255,255,255);font-size:16px;font-weight:bold;}");
+    ui->main_frame_grade_3->setStyleSheet("QFrame{background-color:rgb(224,236,255);font-size:16px;font-weight:bold;}");
+    ui->main_frame_grade_4->setStyleSheet("QFrame{background-color:rgb(255,255,255);font-size:16px;font-weight:bold;}");
+
 
 }
 
@@ -101,52 +167,30 @@ void teacher::set_left(){
                                            "QPushButton:hover{background-color:rgb(220,235,254);color:rgb(95,95,95);border-style:ridge;}"
                                            "QPushButton:pressed{background-color:rgb(220,235,254);color:rgb(95,95,95);border-style:ridge;}");
 
-    ui->button_class_course->setStyleSheet("QPushButton{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;border-style:inset;}"
+    ui->button_grade_search->setStyleSheet("QPushButton{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;border-style:inset;}"
                                            "QPushButton:hover{background-color:rgb(251,236,136);color:rgb(95,95,95);border-style:inset;}"
                                            "QPushButton:pressed{background-color:rgb(251,236,136);color:rgb(95,95,95);border-style:inset;}");
 
-    ui->button_course_search->setStyleSheet("QPushButton{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;border-style:inset;}"
+    ui->button_roll_school->setStyleSheet("QPushButton{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;border-style:inset;}"
                                             "QPushButton:hover{background-color:rgb(251,236,136);color:rgb(95,95,95);border-style:inset;}"
                                             "QPushButton:pressed{background-color:rgb(251,236,136);color:rgb(95,95,95);border-style:inset;}");
-
-    ui->button_grade_course->setStyleSheet("QPushButton{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;border-style:inset;}"
-                                           "QPushButton:hover{background-color:rgb(251,236,136);color:rgb(95,95,95);border-style:inset;}"
-                                           "QPushButton:pressed{background-color:rgb(251,236,136);color:rgb(95,95,95);border-style:inset;}");
-
-    ui->button_grade_test->setStyleSheet("QPushButton{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;border-style:inset;}"
-                                         "QPushButton:hover{background-color:rgb(251,236,136);color:rgb(95,95,95);border-style:inset;}"
-                                         "QPushButton:pressed{background-color:rgb(251,236,136);color:rgb(95,95,95);border-style:inset;}");
 
     ui->button_innovation->setStyleSheet("QPushButton{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;border-style:inset;}"
                                          "QPushButton:hover{background-color:rgb(251,236,136);color:rgb(95,95,95);border-style:inset;}"
                                          "QPushButton:pressed{background-color:rgb(251,236,136);color:rgb(95,95,95);border-style:inset;}");
 
-    ui->button_study_plan->setStyleSheet("QPushButton{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;border-style:inset;}"
-                                         "QPushButton:hover{background-color:rgb(251,236,136);color:rgb(95,95,95);border-style:inset;}"
-                                         "QPushButton:pressed{background-color:rgb(251,236,136);color:rgb(95,95,95);border-style:inset;}");
-
-    ui->button_test_scheme->setStyleSheet("QPushButton{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;border-style:inset;}"
-                                          "QPushButton:hover{background-color:rgb(251,236,136);color:rgb(95,95,95);border-style:inset;}"
-                                          "QPushButton:pressed{background-color:rgb(251,236,136);color:rgb(95,95,95);border-style:inset;}");
-
-    ui->button_training_scheme->setStyleSheet("QPushButton{background-color:rgb(255,255,255);color:rgb(95,95,95);font-size:16px;font-weight:bold;border-style:inset;}"
-                                              "QPushButton:hover{background-color:rgb(251,236,136);color:rgb(95,95,95);border-style:inset;}"
-                                              "QPushButton:pressed{background-color:rgb(251,236,136);color:rgb(95,95,95);border-style:inset;}");
 
 
-    ui->button_class_course->setVisible(state);
-    ui->button_course_search->setVisible(state);
-    ui->button_grade_course->setVisible(state);
-    ui->button_grade_test->setVisible(state);
+    ui->button_grade_search->setVisible(state);
+    ui->button_roll_school->setVisible(state);
     ui->button_innovation->setVisible(state);
-    ui->button_study_plan->setVisible(state);
-    ui->button_test_scheme->setVisible(state);
-    ui->button_training_scheme->setVisible(state);
+
 }
 
 
 void teacher::classCourseSlot(){
-    qDebug() << "a";
+    ui->label_user_man->setStyleSheet("QLabel{background-color:rgb(246,249,255);font-size:16px;font-weight:bold;}");
+    ui->label_logal->setStyleSheet("QLabel{background-color:rgb(246,249,255);font-size:16px;font-weight:bold;}");
 }
 
 void teacher::gradeTestSlot(){
@@ -193,42 +237,30 @@ void teacher::on_button_infor_search_clicked()
         state = false;
         i = 1;
     }
-    ui->button_class_course->setVisible(state);
-    ui->button_course_search->setVisible(state);
-    ui->button_grade_course->setVisible(state);
-    ui->button_grade_test->setVisible(state);
+//    ui->button_class_course->setVisible(state);
+    ui->button_grade_search->setVisible(state);
+    ui->button_roll_school->setVisible(state);
     ui->button_innovation->setVisible(state);
-    ui->button_study_plan->setVisible(state);
-    ui->button_test_scheme->setVisible(state);
-    ui->button_training_scheme->setVisible(state);
+//    ui->button_grade_test->setVisible(state);
+//    ui->button_study_plan->setVisible(state);
+//    ui->button_test_scheme->setVisible(state);
+//    ui->button_training_scheme->setVisible(state);
 }
 
 void teacher::action_subMenu_select(QMenu *m){
     QList<QAction*> action_list;
     QAction *select_course = new QAction(m);
-    QAction *reset_make_up = new QAction(m);
-    QAction *graduation_topics = new QAction(m);
-    QAction *grade_test = new QAction(m);
-    QAction *test = new QAction(m);
 
-    select_course->setText("Á©∫Èó≤ÊïôÂÆ§");
-    reset_make_up->setText("‰∏äËØæÊïôÂÆ§");
-    graduation_topics->setText("ÊïôÂÆ§Áî≥ËØ∑");
-    grade_test->setText("ÂÆûÈ™åÂÆ§Áî≥ËØ∑");
-    test->setText("ËØæË°®Êü•ËØ¢");
+
+    select_course->setText(QStringLiteral("øŒ≥Ã—°‘Ò"));
+
 
     action_list.push_front(select_course);
-    action_list.push_front(reset_make_up);
-    action_list.push_front(graduation_topics);
-    action_list.push_front(grade_test);
-    action_list.push_front(test);
     m->addActions(action_list);
 
+
     connect(select_course, SIGNAL(triggered()), this, SLOT(classCourseSlot()));
-    connect(reset_make_up, SIGNAL(triggered()), this, SLOT(classCourseSlot()));
-    connect(graduation_topics, SIGNAL(triggered()), this, SLOT(classCourseSlot()));
-    connect(grade_test, SIGNAL(triggered()), this, SLOT(classCourseSlot()));
-    connect(test, SIGNAL(triggered()), this, SLOT(classCourseSlot()));
+
 }
 
 void teacher::action_subMenu_evaluate(QMenu *m){
@@ -238,10 +270,10 @@ void teacher::action_subMenu_evaluate(QMenu *m){
     QAction *course_evaluate = new QAction(m);
     QAction *class_evaluate = new QAction(m);
 
-    teacher_evaluate->setText("‰øÆÊîπÊàêÁª©");
-    other_question->setText("Êü•ÁúãÊàêÁª©");
-    course_evaluate->setText("ÁôªËÆ∞Âπ≥Êó∂ÂàÜ");
-    class_evaluate->setText("ÁôªËÆ∞ÁêÜËÆ∫ÊàêÁª©");
+    teacher_evaluate->setText(QStringLiteral("–ﬁ∏ƒ≥…º®"));
+    other_question->setText(QStringLiteral("≤Èø¥≥…º®"));
+    course_evaluate->setText(QStringLiteral("µ«º«∆Ω ±∑÷"));
+    class_evaluate->setText(QStringLiteral("µ«º«¿Ì¬€≥…º®"));
 
     action_list.push_front(teacher_evaluate);
     action_list.push_front(other_question);
@@ -259,7 +291,7 @@ void teacher::action_subMenu_regist(QMenu *m){
     QList<QAction*> action_list;
     QAction *write = new QAction(m);
 
-    write->setText("È°πÁõÆ‰øÆÊîπ");
+    write->setText(QStringLiteral("œÓƒø–ﬁ∏ƒ"));
 
     action_list.push_front(write);
     m->addActions(action_list);
@@ -270,10 +302,17 @@ void teacher::action_subMenu_regist(QMenu *m){
 void teacher::action_subMenu_innovations(QMenu *m){
     QList<QAction*> action_list;
     QAction *apply= new QAction(m);
+    QAction *search= new QAction(m);
+    QAction *access= new QAction(m);
 
-    apply->setText("Áî≥ËØ∑È°πÁõÆ");
+    apply->setText(QStringLiteral("…Í«ÎœÓƒø"));
+    search->setText(QStringLiteral("≤È—ØœÓƒø"));
+    access->setText(QStringLiteral("øº∫ÀœÓƒø"));
 
     action_list.push_front(apply);
+    action_list.push_front(search);
+    action_list.push_front(access);
+
     m->addActions(action_list);
 
     connect(apply, SIGNAL(triggered()), this, SLOT(classCourseSlot()));

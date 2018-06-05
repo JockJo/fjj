@@ -26,7 +26,7 @@ login::login(QWidget *parent) :
     //设置用户名字标签
     ui->userNameLabel->setStyleSheet("QLabel{background-color:rgb(245,245,245);color:rgb(135,135,135);font-size:16px;font-weight:bold;border-style:inset}");
     ui->userNameLabel->setAlignment(Qt::AlignCenter);
-    ui->userNameLabel->setText("JockJo");
+    ui->userNameLabel->setText("3214002920");
 
     //设置切换账号按钮
     ui->changAccountButton->setCursor(Qt::PointingHandCursor);
@@ -35,8 +35,8 @@ login::login(QWidget *parent) :
 
     //隐藏边框
     this->setWindowFlags(Qt::FramelessWindowHint);
+    this->setFixedSize(this->size());
     this->show();
-
 }
 
 void login::mousePressEvent(QMouseEvent* event)
@@ -69,11 +69,11 @@ login::~login()
 
 void login::on_loginButton_clicked()
 {
-    /*开启新的进程，进入主界面*/
+    //开启新的进程，进入主界面
     delete ui;
     this->close();
     s = new student();
- //   t = new teacher();
+//    t = new teacher();
 }
 
 void login::on_exitButton_clicked()

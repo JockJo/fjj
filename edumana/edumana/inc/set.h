@@ -35,6 +35,11 @@ private:
     Ui::set *ui;
     QString fileName;
     QPixmap icon;
+    bool mousePress;
+    QPoint mousePos;
+    void mousePressEvent(QMouseEvent*);
+    void mouseMoveEvent(QMouseEvent*);
+    void mouseReleaseEvent(QMouseEvent*);
 };
 
 #endif // SET_H

@@ -1,4 +1,4 @@
-#include "./inc/set.h"
+﻿#include "./inc/set.h"
 #include "ui_set.h"
 
 set::set(QWidget *parent) :
@@ -7,6 +7,7 @@ set::set(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint);
+    this->setFixedSize(this->size());
     this->show();
 
     //设置关闭按钮
@@ -23,9 +24,17 @@ set::set(QWidget *parent) :
     ui->userPhotoButton->setIcon(icon);
 
     //设置内容显示居中
+
     ui->lineEdit->setAlignment(Qt::AlignCenter);
-    ui->lineEdit->setStyleSheet("QLabel{background-color:rgb(245,245,245);color:rgb(135,135,135);font-size:16px;font-weight:bold;border-style:inset}");
-    ui->lineEdit->setStyleSheet("border:none");
+    ui->lineEdit->setStyleSheet("QLabel{background-color:rgb(245,245,245);color:rgb(135,135,135);font-size:16px;font-weight:bold;border-style:inset;}");
+    ui->lineEdit->setPlaceholderText(QStringLiteral("user_name"));
+    //ui->lineEdit->setStyleSheet("border:none");
+
+    ui->lineEdit_2->setAlignment(Qt::AlignCenter);
+    ui->lineEdit_2->setStyleSheet("QLabel{background-color:rgb(245,245,245);color:rgb(135,135,135);font-size:16px;font-weight:bold;border-style:inset}");
+    //ui->lineEdit_2->setStyleSheet("border:none");
+    ui->lineEdit_2->setPlaceholderText(QStringLiteral("passward"));
+    ui->lineEdit_2->setEchoMode(QLineEdit::Password);     //输入密码显示圆点
 
     //设置登陆按钮
     ui->loginButton->setCursor(Qt::PointingHandCursor);
@@ -58,7 +67,7 @@ void set::on_loginButton_clicked()
     }
     else
     {
-        /*开启新的进程，进入主界面*/
+        //开启新的进程，进入主界面
         delete ui;
         this->close();
 //        chat* ch = new chat();
@@ -91,3 +100,25 @@ QString set::gotFilename()
     return fileName;
 }
 
+void set::mousePressEvent(QMouseEvent* event)
+{
+    if(event->button() == Qt::LeftButton)
+    {
+        mousePress = true;
+        mousePos = event->pos();
+    }
+}
+
+void set::mouseMoveEvent(QMouseEvent* event)
+{
+    if(mousePress)
+    {
+        move(event->pos()-mousePos+pos());
+    }
+}
+
+void set::mouseReleaseEvent(QMouseEvent* event)
+{
+    Q_UNUSED(event);
+    mousePress = false;
+}
